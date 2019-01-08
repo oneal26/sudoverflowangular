@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top"style="background-color:#f2f2f2;border-top:.2em solid orange">
+  <a class="navbar-brand" routerLink="/home"><img src="/assets/flow.png" alt="s-logo" style="height:1em;width:1.5em;">sudo<strong>overflow</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/feed">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/post">Create Post</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link btn btn-light" routerLink="/users">Create an account</a>
+        </li>
+          <li class="nav-item"><a class="nav-link">|</a></li>
+      <li class="nav-item" routerLinkActiv="active">
+        <a class="nav-link btn btn-light" routerLink="/login">Log In</a>
+      </li>
+    </ul>
+  </div>
+</nav>

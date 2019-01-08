@@ -1,0 +1,24 @@
+<div class="container marketing">
+    <hr class="featurette-divider">
+  <ul>
+    <li *ngFor="let post of postList.reverse()">
+      <div class="jumbotron user">
+      <a routerLink="/home">
+      <h1><em>{{ post.userName }}:</em></h1>
+        <ul>
+            <li>
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.content }}<br><em>{{ post.vote }}</em></p>
+            </li>
+        </ul>
+      </a>
+        <button class="btn btn-danger" (click)="deletePost(post)"style="float:right;bottom:0;">
+            <i class="fa fa-trash"></i>
+        </button>
+        
+    </div>
+    </li>
+  </ul>
+
+ 
+</div>
