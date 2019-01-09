@@ -1,3 +1,4 @@
+<!--
 <div class="container marketing">
     <hr class="featurette-divider">
   <ul>
@@ -22,3 +23,36 @@
 
  
 </div>
+-->
+
+<div class="feed-container">
+    <div class="feed-border clearfix">
+      <div class="feed-body clearfix">
+        <div class="feed-avatar">
+          <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7d/7d935b986074f16ce5b40b702fa8ea2ce9d98573_full.jpg" alt="" />
+        </div>
+        <li *ngFor="let post of postList.reverse()">
+        <div class="feed-content">
+          <div class="username">@<a href="#">lol</a></div>
+          <ul>
+            <li>
+          <h3>lol</h3>
+          <p>
+            lol
+            <br>
+            <em>lol</em>
+          </p>
+          <button class="btn btn-danger" (click)="deletePost(post)"style="float:right;bottom:0;">
+            <i class="fa fa-trash"></i>
+        </button>
+              </li>
+            </ul>
+      </div>
+    </li>
+      <div class="feed-footer clearfix">
+        <div class="footer-right">
+           <span class="plusOne"><a href="#" title="Me gusta"><i class="fa fa-arrow-up"></i> 12</a></span>
+        </div>     
+        </div>
+    </div>
+  </div>
