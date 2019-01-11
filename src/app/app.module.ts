@@ -15,6 +15,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { LoginComponent } from './login/login.component';
 import { CommentsComponent } from './comments/comments.component';
+import { ResultComponent } from './result/result.component';
 
 
 
@@ -29,6 +30,7 @@ import { CommentsComponent } from './comments/comments.component';
     PostComponent,
     LoginComponent,
     CommentsComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

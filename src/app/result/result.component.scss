@@ -2,6 +2,12 @@ ul, li{
     list-style-type: none;
 }
 
+div button{
+    align-content:center;
+    margin-left:auto;
+    margin-right: auto;
+}
+
 a{
     text-decoration: none;
     color:black;
@@ -81,8 +87,10 @@ a:hover h1{
       text-align:left;
   }
 
-  .btn-danger{
-    margin-top:300%;
+  div h1, div h3{
+    text-align:left;
   }
 
-
+  .btn{
+      margin-top:4em;
+  }

@@ -1,24 +1,52 @@
-<div class="container marketing">
-    <hr class="featurette-divider">
-  <ul>
-    <li *ngFor="let post of postList.reverse()">
-      <div class="jumbotron user">
-      <a routerLink="/home">
-      <h1><em>{{ post.userName }}:</em></h1>
-        <ul>
-            <li>
-              <h3>{{ post.title }}</h3>
-              <p>{{ post.content }}<br><em>{{ post.vote }}</em></p>
-            </li>
-        </ul>
-      </a>
-        <button class="btn btn-danger" (click)="deletePost(post)"style="float:right;bottom:0;">
-            <i class="fa fa-trash"></i>
-        </button>
-        
-    </div>
-    </li>
-  </ul>
 
+<div class="parallax"></div>
+<div class="container marketing">
+<ul>
+<li *ngFor="let post of postList.reverse()">
  
+<div class="feed-container">
+    
+    <div class="feed-border clearfix">
+      <div class="feed-body clearfix">
+        
+       
+        <div class="feed-content">
+            <div class="username"><h1><em>@{{ post.userName }}</em></h1></div>
+            <hr>
+          
+          <h3 style="text-align:left;">{{ post.title }}</h3>
+          <p>
+            
+            <br>
+            <em>{{ post.content }}</em>
+          </p>
+          
+              
+      </div>
+    
+      <div class="feed-footer clearfix">
+        <div class="footer-right">
+         
+
+          <a class="plusOne" (click)="upVote(post)">
+            <i class="fa fa-arrow-up"></i>
+          </a>
+          {{ post?.vote }}
+          <a class="plusOne" (click)="downVote(post)">
+            <i class="fa fa-arrow-down"></i>
+          </a>
+
+          <button class="btn btn-danger" (click)="deletePost(post)"style="float:right;bottom:0;">
+              <i class="fa fa-trash"></i>
+          </button>
+  
+       
+          </div>     
+        </div>
+    </div>
+  </div>
+  </div>
+
+</li>
+</ul>
 </div>
