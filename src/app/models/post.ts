@@ -3,15 +3,15 @@ class Post {
     userName: string;
     title: string;
     content: string;
-    vote: Number;
-    comments: [];
+    vote: number;
+    comments: Array<any>;
 
     constructor(
         ){
             this.userName = ""
             this.title = ""
             this.content = ""
-            this.vote = new Number
+            this.vote = 0
             this.comments = []
         }
 }

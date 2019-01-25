@@ -7,18 +7,19 @@ import User from '../models/user';
 import Post from '../models/post';
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+  selector: 'app-result',
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.scss']
 })
-export class CommentsComponent implements OnInit {
+export class ResultComponent implements OnInit {
+  
+  
 
   api_url = 'http://localhost:3000';
   userUrl = `${this.api_url}/api/users`;
   postUrl = `${this.api_url}/api/posts`;
 
   constructor(private userService: UserService, private postService: PostService,private http: HttpClient) { 
-    
   }
   
   
@@ -27,6 +28,7 @@ export class CommentsComponent implements OnInit {
   editPosts: Post[] = [];
 
   ngOnInit() {
+    this.refresh()
     this.userService.getUsers()
       .subscribe(users => {
         //assign the Userlist property to the proper http response
@@ -42,6 +44,18 @@ export class CommentsComponent implements OnInit {
       })
 
       
+}
+
+refresh(){
+  if( window.localStorage ){
+    if( !localStorage.getItem('firstLoad') ){
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }else{
+      localStorage.removeItem('firstLoad');
+      }
+    }
+  console.log("Refreshed.")
 }
 
 addComment(post: Post, comment: Post){
@@ -74,15 +88,22 @@ downVote(post: Post){
 
 
 deleteUser(user: User) {
+
+
   this.userService.deleteUser(user._id).subscribe(res => {
     this.usersList.splice(this.usersList.indexOf(user), 1);
   })
 }
 
-deletePost(post: Post) {
+
+deletePost(post: Post, check: Boolean) {
+  check = confirm("Are you sure you want to delete this post?")
+  if(check == true){
   this.postService.deletePost(post._id).subscribe(res => {
     this.postList.splice(this.postList.indexOf(post), 1);
-  })
+  })}else{
+    console.log("User Chose to cancel")
+  }
 }
 
 editPost(post: Post) {
@@ -102,5 +123,6 @@ editPost(post: Post) {
     }
   }
   
+
 
 }

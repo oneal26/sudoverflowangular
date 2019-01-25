@@ -27,6 +27,7 @@ export class FeedComponent implements OnInit {
   
   postList: any = [];
   usersList: any = [];
+  editPosts: Post[] = [];
 
   ngOnInit() {
     this.userService.getUsers()
@@ -46,16 +47,70 @@ export class FeedComponent implements OnInit {
       
 }
 
+addComment(post: Post, comment: Post){
+  
+  post.comments.push(comment)
+  this.postService.editPost(post).subscribe(res => {
+    console.log('Update Succesful')
+  }, err => {
+    console.error('Update Unsuccesful')
+  })
+}
+
+upVote(post: Post){
+  post.vote += 1
+  this.postService.editPost(post).subscribe(res => {
+    console.log('Update Succesful')
+  }, err => {
+    console.error('Update Unsuccesful')
+  })
+}
+
+downVote(post: Post){
+  post.vote -= 1
+  this.postService.editPost(post).subscribe(res => {
+    console.log('Update Succesful')
+  }, err => {
+    console.error('Update Unsuccesful')
+  })
+}
+
+
 deleteUser(user: User) {
+
+
   this.userService.deleteUser(user._id).subscribe(res => {
     this.usersList.splice(this.usersList.indexOf(user), 1);
   })
 }
 
-deletePost(post: Post) {
+
+deletePost(post: Post, check: Boolean) {
+  check = confirm("Are you sure you want to delete this post?")
+  if(check == true){
   this.postService.deletePost(post._id).subscribe(res => {
     this.postList.splice(this.postList.indexOf(post), 1);
-  })
+  })}else{
+    console.log("User Chose to cancel")
+  }
 }
+
+editPost(post: Post) {
+  console.log(post)
+   if(this.postList.includes(post)){
+    if(!this.editPosts.includes(post)){
+      this.editPosts.push(post)
+    }else{
+      this.editPosts.splice(this.editPosts.indexOf(post), 1)
+      this.postService.editPost(post).subscribe(res => {
+        console.log('Update Succesful')
+       }, err => {
+          // this.editUser(User)
+          console.error('Update Unsuccesful')
+        })
+      }
+    }
+  }
+  
 
 }

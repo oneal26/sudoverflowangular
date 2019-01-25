@@ -41,6 +41,14 @@ export class PostComponent implements OnInit {
       })
   }
 
+  upVote(post: Post){
+    post.vote += 1
+    this.postService.editPost(post).subscribe(res => {
+      console.log('Update Succesful')
+    }, err => {
+      console.error('Update Unsuccesful')
+    })
+  }
 
 
 
@@ -62,7 +70,7 @@ export class PostComponent implements OnInit {
     }
 
     submitPost(event, Post:Post){
-      if(event.keyCode ==13){
+      if(event.click){
         this.editPost(Post)
       }
     }

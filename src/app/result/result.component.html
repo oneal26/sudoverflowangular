@@ -1,0 +1,16 @@
+<div class="container marketing">
+  <div class="feed-container">
+<div class="jumbotron">
+  <h1>Thank you for your post <span style="color:#2A5DB0"><em>@{{ postList[postList.length-1].userName }}</em></span> !</h1>
+  <hr><hr>
+  <h3><strong><em>Username: </em></strong>@{{ postList[postList.length-1].userName }}</h3>
+  <hr>
+  <h3><strong><em>Title: </em></strong>{{ postList[postList.length-1].title }}</h3>
+  <hr>
+  <h3><strong><em>Content: </em></strong>{{ postList[postList.length-1].content }}</h3>
+  
+  <button routerLink="/feed" class="fa fa-home btn btn-success">Home</button>
+  
+</div>
+</div>
+</div>

@@ -2,6 +2,12 @@ ul, li{
     list-style-type: none;
 }
 
+div button{
+    align-content:center;
+    margin-left:auto;
+    margin-right: auto;
+}
+
 a{
     text-decoration: none;
     color:black;
@@ -11,17 +17,11 @@ a:hover h1{
     color:white;
     text-shadow: 0 0 5px black;
 }
-<<<<<<< HEAD
-
-.feed-container{
-    margin:25px;
-=======
 .feed-container{
     text-align:center;
     align-content: center;
     margin:25px;
     
->>>>>>> fcd36e78cc2909e15bddfc0b7007f4bba0aa523b
   }
   .feed-border{
     background:#fff;
@@ -45,10 +45,7 @@ a:hover h1{
   }
   .feed-content{
     margin: 20px 5px;
-<<<<<<< HEAD
-=======
     padding-left:5em;
->>>>>>> fcd36e78cc2909e15bddfc0b7007f4bba0aa523b
     width:80%;
   }
   .feed-avatar img{
@@ -80,12 +77,6 @@ a:hover h1{
     color:#333;
   }
   .divisor{
-<<<<<<< HEAD
-      border-left: solid 1px #B5B5B5;
-    margin-right:5px;
-    margin-left:1px;
-  }
-=======
     border-left: solid 1px #B5B5B5;
     margin-right:5px;
     margin-left:1px;
@@ -96,9 +87,10 @@ a:hover h1{
       text-align:left;
   }
 
-  .btn-danger{
-    margin-top:300%;
+  div h1, div h3{
+    text-align:left;
   }
 
-
->>>>>>> fcd36e78cc2909e15bddfc0b7007f4bba0aa523b
+  .btn{
+      margin-top:4em;
+  }
